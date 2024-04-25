@@ -124,8 +124,7 @@ a {
 }
 
 .modal-content img {
-  height: 10rem;
-  max-height: 100%;
+  height: 5rem;
 }
 
 .close,
@@ -282,4 +281,3 @@ ol li button{
 .footer img {
   width: 50%;
 }
-
