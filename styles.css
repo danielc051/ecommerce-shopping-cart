@@ -42,7 +42,19 @@ a {
   cursor: pointer;
 }
 
+#cartCounter {
+  background-color: red;
+  color: white;
+  font-size: 20px; /* Font size */
+  padding: 4px 10px; /* Padding */
+  border-radius: 50%; /* Circular shape */
+  font-family: sans-serif;
+}
+
+
+
 /* Style for the modal */
+
 .modal {
   display: none;
   position: fixed;
@@ -56,9 +68,11 @@ a {
 }
 
 .modal-content {
+  display: grid;
+  grid-template-rows: 1fr 3fr 100px;
   background-color: #fefefe;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid black;
   width: 20%;
   position: fixed;
   right: 0;
@@ -67,18 +81,20 @@ a {
   overflow-y: auto;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal .btn{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .remove-btn-container {
@@ -91,12 +107,6 @@ a {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-}
-
-.item-image {
-  width: 50px;
-  height: auto;
-  margin-right: 10px;
 }
 
 .item-details {
@@ -114,22 +124,32 @@ a {
 }
 
 .modal-content img {
-  width: 5rem;
+  height: 10rem;
+  max-height: 100%;
 }
 
-#cartBtn {
-  font-size: 1.125rem;
-  padding: 6px 18px;
-  border: 0.5px solid var(--border-dark);
+.close,
+.check-out {
+  color: var(--font-dark);
   background-color: white;
-  outline: none;
-  cursor: pointer;
 }
 
-#cartBtn:hover {
+.close:hover,
+.check-out:hover {
   background-color: var(--border-dark);
   color: white;
   transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+ol li{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+ol li button{
+  margin-left: 10px;
+  
 }
 
 /* Product Section*/
@@ -262,3 +282,4 @@ a {
 .footer img {
   width: 50%;
 }
+

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,21 +21,20 @@
       <a href="https://www.moustacherepublic.com/"><img src="image/mr-logo.webp" class="navbar-logo" /></a>
       <div class="icon-cart">
         <i class="fa-solid fa-cart-shopping cart-icon" onclick="openModal()"></i>
+        <span id="cartCounter">0</span>
       </div>
   </nav>
+
 
 <!-- Modal -->
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
     <img id="productImage" src="image/classic-tee.jpg" alt="Classic Tee">
-    <div id="sizeOptions">
-      <button class="size-btn" onclick="selectSize('Small')">Size Small</button>
-      <button class="size-btn" onclick="selectSize('Medium')">Size Medium</button>
-      <button class="size-btn" onclick="selectSize('Large')">Size Large</button>
-    </div>
-    <button id="cartBtn" onclick="addToCart()">Add to Cart</button>
-    <ul id="cartItems"></ul>
+    <ol id="cartItems"></ol>
+    <div class="btn">
+      <button class="close" onclick="closeModal()">Close</button>
+      <button class="check-out">Check Out</button>
+  </div>
   </div>
 </div>
    
@@ -64,15 +62,14 @@
     </div>
 
     <div class="size-section">
-        <button class="size-btn">S</button>
-        <button class="size-btn">M</button>
-        <button class="size-btn">L</button>
+        <button class="size-btn" onclick="selectSize('Small')">S</button>
+        <button class="size-btn" onclick="selectSize('Medium')">M</button>
+        <button class="size-btn" onclick="selectSize('Large')">L</button>
     </div>
 
       <div class="btn-box">
-        <button id="cartBtn" class="cart-btn btn" onclick="openModal()">Add To Cart</button>
+        <button id="cartBtn" class="cart-btn" onclick="addToCart()">Add To Cart</button>
         <button class="buy-btn" onclick="openModal()">Buy Now</button>
-        
       </div>
       
   </section> 
