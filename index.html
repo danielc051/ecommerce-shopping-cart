@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothing Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -13,56 +13,90 @@
       rel="stylesheet"
       href="https://3sb655pz3a.execute-api.ap-southeast-2.amazonaws.com/live/product"
     />
-</head>
-
-<body class="">
     
-    <div>
-        <header>
-            <a href="https://www.moustacherepublic.com/"><img src="image/mr-logo.webp" class="navbar-logo" /></a>
-            <div class="icon-cart">
-                <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                <span>*</span>
-            </div>
-        </header>
+  </head>
+  <body>
+
+  <nav>
+    <div class="navbar">
+      <a href="https://www.moustacherepublic.com/"><img src="image/mr-logo.webp" class="navbar-logo" /></a>
+      <div class="icon-cart">
+        <i class="fa-solid fa-cart-shopping cart-icon" onclick="openModal()"></i>
+      </div>
+  </nav>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="productImage" src="image/classic-tee.jpg" alt="Classic Tee">
+    <div id="sizeOptions">
+      <button class="size-btn" onclick="selectSize('Small')">Size Small</button>
+      <button class="size-btn" onclick="selectSize('Medium')">Size Medium</button>
+      <button class="size-btn" onclick="selectSize('Large')">Size Large</button>
+    </div>
+    <button id="cartBtn" onclick="addToCart()">Add to Cart</button>
+    <ul id="cartItems"></ul>
+  </div>
+</div>
+   
+  
+  <section class="product-section">
+
+    <div id="productImage" class="product-image">
+      <img src="image/classic-tee.jpg" alt="product image"/>
+    </div>
+
+    <div class="product-content">
+      <div class="pname">Classic Tee</div>
+      <div id="total" class="price">$75.00</div>
+    
+      <div class="product-description">
+      <p>
+        Elevate your wardrobe essentials with our Classic White T-Shirt.
+        Crafted from premium cotton fabric, this timeless piece offers
+        unbeatable comfort and style for everyday wear. The Classic White
+        T-Shirt features a relaxed fit and a crew neckline for a versatile
+        look that suits all occasions. Pair it with your favorite denim for
+        a laid-back weekend vibe, or layer it under a blazer for a
+        smart-casual ensemble.
+      </p>
+    </div>
+
+    <div class="size-section">
+        <button class="size-btn">S</button>
+        <button class="size-btn">M</button>
+        <button class="size-btn">L</button>
+    </div>
+
+      <div class="btn-box">
+        <button id="cartBtn" class="cart-btn btn" onclick="openModal()">Add To Cart</button>
+        <button class="buy-btn" onclick="openModal()">Buy Now</button>
         
-        <div class="listProduct">
-        
-            </div>
-        </div>
-
-<!-- Shopping Cart -->
-    <div class="cartTab">
-        <h1>Shopping Cart</h1>
-        <div class="listCart">
-        </div>
-        <div class="btn">
-            <button class="close">Close</button>
-            <button class="checkOut">Check Out</button>
-        </div>
-    </div>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-column">
-      <a href="https://www.moustacherepublic.com/"><img src="image/mr-logo.webp" class="cart-icon" /></a>
-    </div>
-    <div class="footer-column">
-      <div class="footer-title">New Zeland Office</div>
-      <div class="footer-text">72 Taharoto Road<br><br>Takapuna, Auckland 0622<br><br>+64 800 885 111
       </div>
-    </div>
+      
+  </section> 
+ 
 
-    <div class="footer-column">
-      <div class="footer-title">Australia Office</div>
-      <div class="footer-text">
-        320 Pitt Street<br><br>Sydney NSW 2000<br><br>+61 2 8317 3384
+    <footer class="footer">
+      <div class="footer-column">
+        <a href="https://www.moustacherepublic.com/"><img src="image/mr-logo.webp" class="navbar-logo" /></a>
       </div>
+      <div class="footer-column">
+        <div class="footer-title">New Zeland Office</div>
+        <div class="footer-text">72 Taharoto Road<br><br>Takapuna, Auckland 0622<br><br>+64 800 885 111
+        </div>
       </div>
-  </footer>
-  </footer>
 
+      <div class="footer-column">
+        <div class="footer-title">Australia Office</div>
+        <div class="footer-text">
+          320 Pitt Street<br><br>Sydney NSW 2000<br><br>+61 2 8317 3384
+        </div>
+        </div>
+    </footer>
+    </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
